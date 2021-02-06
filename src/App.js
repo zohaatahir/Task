@@ -17,9 +17,8 @@ import { Component } from 'react';
 
   async fileUploadfunc(formElement)
   {
-    alert("zzzzzzzzzzzzz");
-  
-    //const formData = new FormData(formElement);
+   
+
     const formData = new FormData(formElement.target);
     try {
       const response = await fetch("http://localhost:3000/file-upload", {
@@ -28,9 +27,9 @@ import { Component } from 'react';
         dataType:"JsonP"
       });
       if (response.status === 200 || response.status === 201) {
-        alert("successfully uploaded file");
+        alert("File Uploaded");
       } else {
-        alert("failed to upload");
+        alert("Failed");
       }
     } catch (e) {
         console.log(e);
